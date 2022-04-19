@@ -6,10 +6,10 @@
 	xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
 	<Id>367F4E28-F27A-41A8-92A6-9F79D56CB19E</Id>
 	<Version>1.0.0.0</Version>
-	<ProviderName>Sample</ProviderName>
+	<ProviderName>Public</ProviderName>
 	<DefaultLocale>en-US</DefaultLocale>
-	<DisplayName DefaultValue="Dialog Data" />
-	<Description DefaultValue="Simple Excel Dialog API" />
+	<DisplayName DefaultValue="Dialog API Data" />
+	<Description DefaultValue="Sample Addin for Dialog API" />
 	<IconUrl DefaultValue="https://localhost:8000/assets/icon-32.png" />
 	<HighResolutionIconUrl DefaultValue="https://localhost:8000/assets/icon-80.png"/>
 	<AppDomains>
@@ -46,6 +46,7 @@
           <GetStarted>
             <Title resid="Test.GetStarted.Title"/>
             <Description resid="Test.GetStarted.Description"/>
+            <LearnMoreUrl resid="Test.GetStarted.LearnMoreUrl"/>
           </GetStarted>
           <FunctionFile resid="Test.SharedRuntime.Url" />
 					 <!-- PrimaryCommandSurface is the main Office Commands. -->
@@ -86,27 +87,6 @@
                     <SourceLocation resid="Test.SharedRuntime.Url" />
                   </Action>
                 </Control>
-
-                <!-- Refresh button -->
-                <Control xsi:type="Button" id="Test.RefreshButton">
-                  <Label resid="Test.RefreshButton.Label" />
-                  <Supertip>
-                    <!-- ToolTip title. resid must point to a ShortString resource. -->
-                    <Title resid="Test.RefreshButton.Label" />
-                    <!-- ToolTip description. resid must point to a LongString resource. -->
-                    <Description resid="Test.RefreshButton.Tooltip" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="Test.icon_16x16" />
-                    <bt:Image size="32" resid="Test.icon_32x32" />
-                    <bt:Image size="80" resid="Test.icon_80x80" />
-                  </Icon>
-
-                  <!-- This is what happens when the command is triggered (E.g. click on the Commands). Supported actions are ExecuteFunction or ShowTaskpane. -->
-                  <Action xsi:type="ExecuteFunction">
-                    <FunctionName>testCommand</FunctionName>
-                  </Action>
-                </Control>
               </Group>
               <!-- Label of your tab -->
               <!-- If validating with XSD it needs to be at the end, we might change this before release -->
@@ -125,6 +105,7 @@
 			<bt:Urls>
 				<bt:Url id="Test.Functions.Script.Url" DefaultValue="https://localhost:8000/simple.js" />
 				<bt:Url id="Test.Functions.Page.Url" DefaultValue="https://localhost:8000/simple.html" />
+				<bt:Url id="Test.GetStarted.LearnMoreUrl" DefaultValue="https://www.office.com" />
         <bt:Url id="Test.Functions.Metadata.Url" DefaultValue="https://localhost:8000/simple.json" />
         <bt:Url id="Test.SharedRuntime.Url" DefaultValue="https://localhost:8000/simple.html" />
 			</bt:Urls>
@@ -132,14 +113,12 @@
 			<bt:ShortStrings>
         <bt:String id="Test.Tab1.TabLabel" DefaultValue="Test Addin" />
         <bt:String id="Test.TaskpaneButton.Label" DefaultValue="Taskpane" />
-        <bt:String id="Test.RefreshButton.Label" DefaultValue="Command" />
         <bt:String id="Test.Group1Label" DefaultValue="Group" />
         <bt:String id="Test.GetStarted.Title" DefaultValue="Welcome" />
 			</bt:ShortStrings>
       <!-- LongStrings max characters==250. -->
       <bt:LongStrings>
         <bt:String id="Test.TaskpaneButton.Tooltip" DefaultValue="Click to Show a Taskpane" />
-        <bt:String id="Test.RefreshButton.Tooltip" DefaultValue="Refresh all =FDS codes on active sheet" />
         <bt:String id="Test.GetStarted.Description" DefaultValue="The Test Addin is loaded! Go to tab to get started." />
       </bt:LongStrings>
 		</Resources>
