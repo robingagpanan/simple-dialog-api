@@ -6,13 +6,12 @@
 	xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
 	<Id>367F4E28-F27A-41A8-92A6-9F79D56CB19E</Id>
 	<Version>1.0.0.0</Version>
-	<ProviderName>FactSet</ProviderName>
+	<ProviderName>Sample</ProviderName>
 	<DefaultLocale>en-US</DefaultLocale>
-	<DisplayName DefaultValue="FactSet Data" />
-	<Description DefaultValue="Access FactSet data with Excel custom functions" />
+	<DisplayName DefaultValue="Dialog Data" />
+	<Description DefaultValue="Simple Excel Dialog API" />
 	<IconUrl DefaultValue="https://localhost:8000/assets/icon-32.png" />
 	<HighResolutionIconUrl DefaultValue="https://localhost:8000/assets/icon-80.png"/>
-	<SupportUrl DefaultValue="https://www.factset.com/"/>
 	<AppDomains>
 		<AppDomain>https://localhost:8000</AppDomain>
 	</AppDomains>
@@ -47,7 +46,6 @@
           <GetStarted>
             <Title resid="Test.GetStarted.Title"/>
             <Description resid="Test.GetStarted.Description"/>
-            <LearnMoreUrl resid="Test.GetStarted.LearnMoreUrl"/>
           </GetStarted>
           <FunctionFile resid="Test.SharedRuntime.Url" />
 					 <!-- PrimaryCommandSurface is the main Office Commands. -->
@@ -127,7 +125,6 @@
 			<bt:Urls>
 				<bt:Url id="Test.Functions.Script.Url" DefaultValue="https://localhost:8000/simple.js" />
 				<bt:Url id="Test.Functions.Page.Url" DefaultValue="https://localhost:8000/simple.html" />
-				<bt:Url id="Test.GetStarted.LearnMoreUrl" DefaultValue="https://www.factset.com" />
         <bt:Url id="Test.Functions.Metadata.Url" DefaultValue="https://localhost:8000/simple.json" />
         <bt:Url id="Test.SharedRuntime.Url" DefaultValue="https://localhost:8000/simple.html" />
 			</bt:Urls>
@@ -143,7 +140,7 @@
       <bt:LongStrings>
         <bt:String id="Test.TaskpaneButton.Tooltip" DefaultValue="Click to Show a Taskpane" />
         <bt:String id="Test.RefreshButton.Tooltip" DefaultValue="Refresh all =FDS codes on active sheet" />
-        <bt:String id="Test.GetStarted.Description" DefaultValue="The Test Addin is loaded! Go to the FactSet tab to get started." />
+        <bt:String id="Test.GetStarted.Description" DefaultValue="The Test Addin is loaded! Go to tab to get started." />
       </bt:LongStrings>
 		</Resources>
 	</VersionOverrides>
