@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- This manifest loads custom functions/images/redirect through CDN, and then the taskpane in production -->
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" 
-	xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
-	<Id>367F4E28-F27A-41A8-92A6-9F79D56CB19E</Id>
-	<Version>1.0.0.0</Version>
-	<ProviderName>Public</ProviderName>
-	<DefaultLocale>en-US</DefaultLocale>
-	<DisplayName DefaultValue="Dialog API Data" />
-	<Description DefaultValue="Sample Addin for Dialog API" />
-	<IconUrl DefaultValue="https://localhost:8000/assets/icon-32.png" />
-	<HighResolutionIconUrl DefaultValue="https://localhost:8000/assets/icon-80.png"/>
-	<AppDomains>
-		<AppDomain>https://localhost:8000</AppDomain>
-	</AppDomains>
-	<Hosts>
-		<Host Name="Workbook" />
-	</Hosts>
-	<DefaultSettings>
-		<SourceLocation DefaultValue="https://localhost:8000/simple.html"/>
-	</DefaultSettings>
-	<Permissions>ReadWriteDocument</Permissions>
-	<VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
-		<Hosts>
-			<Host xsi:type="Workbook">
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" 
+  xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+  <Id>367F4E28-F27A-41A8-92A6-9F79D56CB19E</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Public</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="Dialog API Data" />
+  <Description DefaultValue="Sample Addin for Dialog API" />
+  <IconUrl DefaultValue="https://localhost:8000/assets/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://localhost:8000/assets/icon-80.png"/>
+  <AppDomains>
+    <AppDomain>https://localhost:8000</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Workbook" />
+  </Hosts>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://localhost:8000/simple.html"/>
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Workbook">
         <Runtimes>
           <Runtime resid="Test.SharedRuntime.Url" lifetime="long" />
         </Runtimes>
-				<AllFormFactors>
-					<ExtensionPoint xsi:type="CustomFunctions">
-						<Script>
-							<SourceLocation resid="Test.Functions.Script.Url" />
-						</Script>
-						<Page>
-							<SourceLocation resid="Test.SharedRuntime.Url"/>
-						</Page>
-						<Metadata>
-							<SourceLocation resid="Test.Functions.Metadata.Url" />
-						</Metadata>
-					</ExtensionPoint>
+        <AllFormFactors>
+          <ExtensionPoint xsi:type="CustomFunctions">
+            <Script>
+              <SourceLocation resid="Test.Functions.Script.Url" />
+            </Script>
+            <Page>
+              <SourceLocation resid="Test.SharedRuntime.Url"/>
+            </Page>
+            <Metadata>
+              <SourceLocation resid="Test.Functions.Metadata.Url" />
+            </Metadata>
+          </ExtensionPoint>
         </AllFormFactors>
         <!-- Desktop means PC/Mac/Online -->
         <DesktopFormFactor>
@@ -49,7 +49,7 @@
             <LearnMoreUrl resid="Test.GetStarted.LearnMoreUrl"/>
           </GetStarted>
           <FunctionFile resid="Test.SharedRuntime.Url" />
-					 <!-- PrimaryCommandSurface is the main Office Commands. -->
+           <!-- PrimaryCommandSurface is the main Office Commands. -->
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
             <!-- Use OfficeTab to extend an existing Tab. Use CustomTab to create a new tab. -->
             <CustomTab id="TabHome">
@@ -93,34 +93,34 @@
               <Label resid="Test.Tab1.TabLabel" />
             </CustomTab >
           </ExtensionPoint>
-				</DesktopFormFactor>
-			</Host>
-		</Hosts>
-		<Resources>
-			<bt:Images>
-				<bt:Image id="Test.icon_16x16" DefaultValue="https://localhost:8000/assets/icon-16.png" />
-				<bt:Image id="Test.icon_32x32" DefaultValue="https://localhost:8000/assets/icon-32.png" />
-				<bt:Image id="Test.icon_80x80" DefaultValue="https://localhost:8000/assets/icon-80.png" />
-			</bt:Images>
-			<bt:Urls>
-				<bt:Url id="Test.Functions.Script.Url" DefaultValue="https://localhost:8000/simple.js" />
-				<bt:Url id="Test.Functions.Page.Url" DefaultValue="https://localhost:8000/simple.html" />
-				<bt:Url id="Test.GetStarted.LearnMoreUrl" DefaultValue="https://www.office.com" />
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Test.icon_16x16" DefaultValue="https://localhost:8000/assets/icon-16.png" />
+        <bt:Image id="Test.icon_32x32" DefaultValue="https://localhost:8000/assets/icon-32.png" />
+        <bt:Image id="Test.icon_80x80" DefaultValue="https://localhost:8000/assets/icon-80.png" />
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="Test.Functions.Script.Url" DefaultValue="https://localhost:8000/simple.js" />
+        <bt:Url id="Test.Functions.Page.Url" DefaultValue="https://localhost:8000/simple.html" />
+        <bt:Url id="Test.GetStarted.LearnMoreUrl" DefaultValue="https://www.office.com" />
         <bt:Url id="Test.Functions.Metadata.Url" DefaultValue="https://localhost:8000/simple.json" />
         <bt:Url id="Test.SharedRuntime.Url" DefaultValue="https://localhost:8000/simple.html" />
-			</bt:Urls>
+      </bt:Urls>
       <!-- ShortStrings max characters==125. -->
-			<bt:ShortStrings>
+      <bt:ShortStrings>
         <bt:String id="Test.Tab1.TabLabel" DefaultValue="Test Addin" />
         <bt:String id="Test.TaskpaneButton.Label" DefaultValue="Taskpane" />
         <bt:String id="Test.Group1Label" DefaultValue="Group" />
         <bt:String id="Test.GetStarted.Title" DefaultValue="Welcome" />
-			</bt:ShortStrings>
+      </bt:ShortStrings>
       <!-- LongStrings max characters==250. -->
       <bt:LongStrings>
         <bt:String id="Test.TaskpaneButton.Tooltip" DefaultValue="Click to Show a Taskpane" />
         <bt:String id="Test.GetStarted.Description" DefaultValue="The Test Addin is loaded! Go to tab to get started." />
       </bt:LongStrings>
-		</Resources>
-	</VersionOverrides>
+    </Resources>
+  </VersionOverrides>
 </OfficeApp>
