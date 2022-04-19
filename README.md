@@ -1,1 +1,1 @@
-To serve, run `yarn install` and then install the certificates, then run `node serve.js` to serve.
+To serve, run `yarn install`, then run `node serve.js`.
