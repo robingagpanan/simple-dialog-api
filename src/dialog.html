@@ -8,10 +8,11 @@
 		<script src="https://unpkg.com/@microsoft/office-js@1.1.27-custom.0/dist/office.debug.js" type="text/javascript"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.js" type="text/javascript"></script>
         <script type="text/javascript">
-			function testCommand(sheetName, range) {
+			function testCommand(sheetName, range, isSelect) {
                 const selectCellMessage = JSON.stringify({
                         range: range,
                         sheetName: sheetName,
+                        isSelect: isSelect
                     });
 
                 /*eslint-disable-next-line no-undef*/
@@ -21,10 +22,16 @@
 		</script>
 	</head>
 	<body>
-		<button onclick="testCommand('Sheet1', 'A1')">Sheet1A1</button>
-        <button onclick="testCommand('Sheet1', 'A2')">Sheet1A2</button>
-        <button onclick="testCommand('Sheet1', 'A3')">Sheet1A3</button>
-        <button onclick="testCommand('Sheet1', 'A4')">Sheet1A4</button>
-        <button onclick="testCommand('Sheet1', 'A5')">Sheet1A5</button>
+		<button onclick="testCommand('Sheet1', 'A1', true)">Select Sheet1A1</button>
+        <button onclick="testCommand('Sheet1', 'A2', true)">Select Sheet1A2</button>
+        <button onclick="testCommand('Sheet1', 'A3', true)">Select Sheet1A3</button>
+        <button onclick="testCommand('Sheet1', 'A4', true)">Select Sheet1A4</button>
+        <button onclick="testCommand('Sheet1', 'A5', true)">Select Sheet1A5</button>
+        <br>
+        <button onclick="testCommand('Sheet1', 'A1', false)">Hide Sheet1A1</button>
+        <button onclick="testCommand('Sheet1', 'A2', false)">Hide Sheet1A2</button>
+        <button onclick="testCommand('Sheet1', 'A3', false)">Hide Sheet1A3</button>
+        <button onclick="testCommand('Sheet1', 'A4', false)">Hide Sheet1A4</button>
+        <button onclick="testCommand('Sheet1', 'A5', false)">Hide Sheet1A5</button>
 	</body>
 </html>
