@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<meta http-equiv="Expires" content="0" />
+		<title>Sample Dialog</title>
+		<script src="https://unpkg.com/@microsoft/office-js@1.1.27-custom.0/dist/office.debug.js" type="text/javascript"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.js" type="text/javascript"></script>
+        <script type="text/javascript">
+			function testCommand(sheetName, range) {
+                const selectCellMessage = JSON.stringify({
+                        range: range,
+                        sheetName: sheetName,
+                    });
+
+                /*eslint-disable-next-line no-undef*/
+                console.log(selectCellMessage)
+                Office.context.ui.messageParent(selectCellMessage);
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="testCommand('Sheet1', 'A1')">Sheet1A1</button>
+        <button onclick="testCommand('Sheet1', 'A2')">Sheet1A2</button>
+        <button onclick="testCommand('Sheet1', 'A3')">Sheet1A3</button>
+        <button onclick="testCommand('Sheet1', 'A4')">Sheet1A4</button>
+        <button onclick="testCommand('Sheet1', 'A5')">Sheet1A5</button>
+	</body>
+</html>

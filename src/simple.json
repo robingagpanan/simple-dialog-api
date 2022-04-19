@@ -1,0 +1,9 @@
+{
+	"functions": [
+	  {
+		"id": "GetValue",
+		"name": "GetValue",
+		"description": "Get test value"
+	  }
+	]
+  }

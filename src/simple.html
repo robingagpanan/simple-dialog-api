@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<meta http-equiv="Expires" content="0" />
+		<title>Custom Functions Upgrade Test</title>
+		<script src="https://unpkg.com/@microsoft/office-js@1.1.27-custom.0/dist/office.debug.js" type="text/javascript"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.js" type="text/javascript"></script>
+        <script src="simple.js" type="text/javascript"></script>
+        <script type="text/javascript">
+			function openDialog() {
+				const dialogUrl = getDialogUrl('dialog.html');
+				const dialogOptions = {height: 44, width: 37, displayInIframe: true};
+
+				Office.context.ui.displayDialogAsync(dialogUrl, dialogOptions, async result => {
+					dialog = result.value;
+					dialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessage);
+				});
+			}
+			function  getDialogUrl(page) {
+				const origin = window.location.origin;
+				return `${origin}/${page}`
+			}
+			async function processMessage(arg) {
+				var rangeDetails = JSON.parse(arg.message);
+				await Excel.run(async context => {
+					const rangeToSelect = context.workbook.worksheets.getItem(rangeDetails.sheetName).getRange(rangeDetails.range);
+
+					// rangeToSelect.select();
+					rangeToSelect.rowHidden = true;
+					await context.sync();
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="openDialog()">Open Dialog</button>
+	</body>
+</html>
