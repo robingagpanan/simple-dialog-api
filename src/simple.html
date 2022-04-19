@@ -27,8 +27,11 @@
 				await Excel.run(async context => {
 					const rangeToSelect = context.workbook.worksheets.getItem(rangeDetails.sheetName).getRange(rangeDetails.range);
 
-					// rangeToSelect.select();
-					rangeToSelect.rowHidden = true;
+					if(rangeDetails.isSelect === true){
+						rangeToSelect.select();
+					}else if(rangeDetails.isSelect === false){
+						rangeToSelect.rowHidden = true;
+					}
 					await context.sync();
 				});
 			}
